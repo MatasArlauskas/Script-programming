@@ -12,57 +12,147 @@
             rel="stylesheet">
     </head>
 
+    <style>
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background color */
+
+ 
+  background-color: #f4f4f4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.background {
+  background-image: url("white.jpg");
+  position: relative;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(155, 154, 154, 0.5);
+  z-index: 1;
+}
+
+.background > * {
+  z-index: 10;
+}
+
+
+h1,
+h2 {
+  color: #333; /* Darker heading color */
+  text-align: center;
+}
+
+p {
+  color: #666; /* Darker text color */
+  text-align: justify;
+  margin: 0 10%;
+}
+
+ul,
+ol {
+  margin: 0 10%; /* Adjusted margin for a more balanced look */
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens */
+  h1,
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.animate-top {
+color: #f4f4f4;
+}
+
+.paveikslelis {
+  display: block;
+  margin: 0 auto;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+    </style>
+
+    <!-------------------------------------------------------------------------------------------------->
+
     <body>
 
-        <!--<div class="logo">
-            <img src="logo.jpg" alt="Logotipas">
-        </div>
-        -->
-        
         <div class="headpic">
-            <img src="forest.jpg" alt="Mano paveikslėlis" width="2500"
+            <img src="forest1.jpg" alt="Mano paveikslėlis" width="2500"
                 height="400">
         </div>
 
-        <div class="content">
-            <h1><b>Apie</b></h1>
-            <p>Man yra 20 metų ir šiuo metu studijuoju Vilniaus Gedimino
-                technikos universitete. Man labai patinka kibernetinio saugumo
-                sritis, nes manau, kad tai yra vienas iš svarbiausių dalykų
-                šiandieninėje technologijų visuomenėje. Be to, aš labai domiuosi
-                sveika gyvensena ir stengiuosi ją propaguoti. Manau, kad svarbu
-                rasti pusiausvyrą tarp mokslų ir sveikatos, nes tai yra raktas į
-                sėkmę.</p>
+        <div class="background">
+            <div class="content">
+                <br>
+                <h1><b>Apie</b></h1>
+                <p>Man yra 20 metų ir šiuo metu studijuoju Vilniaus Gedimino
+                    technikos universitete. Man labai patinka kibernetinio
+                    saugumo
+                    sritis, nes manau, kad tai yra vienas iš svarbiausių dalykų
+                    šiandieninėje technologijų visuomenėje. Be to, aš labai
+                    domiuosi
+                    sveika gyvensena ir stengiuosi ją propaguoti. Manau, kad
+                    svarbu
+                    rasti pusiausvyrą tarp mokslų ir sveikatos, nes tai yra
+                    raktas į
+                    sėkmę.</p>
 
-            <h1><b>Faktai</b></h1>
-            <ul>
-                <li>Studijuoju Informacines ir Ryšių technologijas</li>
-                <li>Esu aktyvus</li>
-            </ul>
+                <h1><b>Faktai</b></h1>
+                <ul>
+                    <li>Studijuoju Informacines ir Ryšių technologijas</li>
+                    <li>Esu aktyvus</li>
+                </ul>
+
+                <br>
+
+                <h1><b>Įgudžiai</b></h1>
+                <ol>
+                    <li>C++/Python/MATLAB/JS</li>
+                    <li>Unix/Windows</li>
+                    <li>OWASP TOP 10</li>
+                </ol>
+
+            </div>
 
             <br>
+            <br>
+            <div class="paveikslelis">
+                <img src="milkyway.jpg" alt="Mano paveikslėlis" width="500"
+                    height="500">
+            </div>
 
-            <h1><b>Įgudžiai</b></h1>
-            <ol>
-                <li>C++/Python/MATLAB/JS</li>
-                <li>Unix/Windows</li>
-                <li>OWASP TOP 10</li>
-            </ol>
-
+            <footer>
+                <p>&copy; 2023 Matas Arlauskas</p>
+            </footer>
         </div>
-
-        <br>
-        <br>
-        <div class="paveikslelis">
-            <img src="milkyway.jpg" alt="Mano paveikslėlis" width="500"
-                height="500">
-        </div>
-
-
-
-        <footer>
-            <p>&copy; 2023 Matas Arlauskas</p>
-        </footer>
     </body>
 
 </html>
