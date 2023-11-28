@@ -6,106 +6,116 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Mano puslapis</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="print.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
             rel="stylesheet">
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     </head>
 
     <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4; /* Light background color */
+        background-color: #f4f4f4;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+    }
 
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4; /* Light background color */
+    .background {
+        background-image: url("white.jpg");
+        position: relative;
+    }
 
- 
-  background-color: #f4f4f4;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: relative;
-}
+    .background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(155, 154, 154, 0.5);
+        z-index: 1;
+    }
 
-.background {
-  background-image: url("white.jpg");
-  position: relative;
-}
+    .background>* {
+        z-index: 10;
+    }
 
-.background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(155, 154, 154, 0.5);
-  z-index: 1;
-}
+    h1,
+    h2 {
+        color: #333; /* Darker heading color */
+        text-align: center;
+    }
 
-.background > * {
-  z-index: 10;
-}
+    p {
+        color: #666; /* Darker text color */
+        text-align: justify;
+        margin: 0 10%;
+    }
 
+    ul,
+    ol {
+        margin: 0 10%; /* Adjusted margin for a more balanced look */
+    }
 
-h1,
-h2 {
-  color: #333; /* Darker heading color */
-  text-align: center;
-}
+    img {
+        display: block;
+        margin: 0 auto;
+    }
 
-p {
-  color: #666; /* Darker text color */
-  text-align: justify;
-  margin: 0 10%;
-}
+    .math-formula {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-ul,
-ol {
-  margin: 0 10%; /* Adjusted margin for a more balanced look */
-}
+    .math-integral {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-img {
-  display: block;
-  margin: 0 auto;
-}
+    .svg-container {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-@media screen and (max-width: 600px) {
-  /* Adjust styles for smaller screens */
-  h1,
-  h2 {
-    font-size: 24px;
-  }
+    @media screen and (max-width: 600px) {
+        /* Adjust styles for smaller screens */
+        h1,
+        h2 {
+            font-size: 24px;
+        }
 
-  p {
-    margin: 0;
-  }
-}
+        p {
+            margin: 0;
+        }
+    }
 
-.animate-top {
-color: #f4f4f4;
-}
+    .animate-top {
+        color: #f4f4f4;
+    }
 
-.paveikslelis {
-  display: block;
-  margin: 0 auto;
-}
+    .paveikslelis {
+        display: block;
+        margin: 0 auto;
+    }
 
-
-footer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-    </style>
-
-    <!-------------------------------------------------------------------------------------------------->
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
 
     <body>
 
         <div class="headpic">
-            <img src="forest1.jpg" alt="Mano paveikslėlis" width="2500"
+            <img src="forest1.jpg" alt="Mano paveikslėlis" width="1711"
                 height="400">
         </div>
 
@@ -114,15 +124,13 @@ footer {
                 <br>
                 <h1><b>Apie</b></h1>
                 <p>Man yra 20 metų ir šiuo metu studijuoju Vilniaus Gedimino
-                    technikos universitete. Man labai patinka kibernetinio
-                    saugumo
-                    sritis, nes manau, kad tai yra vienas iš svarbiausių dalykų
+                    technikos universitete. Man labai
+                    patinka kibernetinio saugumo sritis, nes manau, kad tai yra
+                    vienas iš svarbiausių dalykų
                     šiandieninėje technologijų visuomenėje. Be to, aš labai
-                    domiuosi
-                    sveika gyvensena ir stengiuosi ją propaguoti. Manau, kad
-                    svarbu
-                    rasti pusiausvyrą tarp mokslų ir sveikatos, nes tai yra
-                    raktas į
+                    domiuosi sveika gyvensena ir stengiuosi
+                    ją propaguoti. Manau, kad svarbu rasti pusiausvyrą tarp
+                    mokslų ir sveikatos, nes tai yra raktas į
                     sėkmę.</p>
 
                 <h1><b>Faktai</b></h1>
@@ -145,8 +153,38 @@ footer {
             <br>
             <br>
             <div class="paveikslelis">
-                <img src="milkyway.jpg" alt="Mano paveikslėlis" width="500"
+                <img src="face.jpg" alt="Mano paveikslėlis" width="500"
                     height="500">
+            </div>
+
+            <div class="math-formula">
+                \(a^2 = b^2 + c^2\)
+            </div>
+
+            <br>
+
+            <div class="math-integral">
+                \(Z(\upsilon)=\frac{1}{\sqrt{\pi}}\int_{-\infty}^{\infty}\frac{e^{-t^{2}}dt}{t-i\upsilon}=i\int_{0}^{\infty}e^{-\upsilon
+                t-t^{2}/4}dt\)
+            </div>
+
+            <div class="svg-container">
+                <svg width="300" height="160" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Draw a line representing the cup -->
+                    <line x1="0" y1="80" x2="90" y2="80" stroke="black" stroke-width="2" />
+                
+                    <!-- Draw an upside-down semicircle on top of the line, painted black -->
+                    <path d="M0 80 A45 45, 0, 0, 0, 90 80" fill="black" stroke="black" stroke-width="2" />
+                
+                    <!-- Draw an oval shape at the bottom of the cup to represent the plate -->
+                    <ellipse cx="45" cy="130" rx="45" ry="15" fill="none" stroke="black" stroke-width="2" />
+                
+                    <!-- Draw a handle for the cup on the right side (rounded) -->
+                    <path d="M90 100 C95 110, 100 120, 90 140" fill="none" stroke="black" stroke-width="2" />
+                </svg>
+                
+                
+
             </div>
 
             <footer>
