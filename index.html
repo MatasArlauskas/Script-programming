@@ -13,104 +13,141 @@
         <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    </head>
+        <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+        }
 
-    <style>
-    body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4; /* Light background color */
-        background-color: #f4f4f4;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        position: relative;
-    }
+        .background {
+            background-image: url("white.jpg");
+            position: relative;
+        }
 
-    .background {
-        background-image: url("white.jpg");
-        position: relative;
-    }
+        .background::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(155, 154, 154, 0.5);
+            z-index: 1;
+        }
 
-    .background::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(155, 154, 154, 0.5);
-        z-index: 1;
-    }
+        .background>* {
+            z-index: 10;
+        }
 
-    .background>* {
-        z-index: 10;
-    }
-
-    h1,
-    h2 {
-        color: #333; /* Darker heading color */
-        text-align: center;
-    }
-
-    p {
-        color: #666; /* Darker text color */
-        text-align: justify;
-        margin: 0 10%;
-    }
-
-    ul,
-    ol {
-        margin: 0 10%; /* Adjusted margin for a more balanced look */
-    }
-
-    img {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .math-formula {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .math-integral {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .svg-container {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    @media screen and (max-width: 600px) {
-        /* Adjust styles for smaller screens */
         h1,
         h2 {
-            font-size: 24px;
+            color: #333;
+            text-align: center;
         }
 
         p {
-            margin: 0;
+            color: #666;
+            text-align: justify;
+            margin: 0 10%;
         }
-    }
 
-    .animate-top {
-        color: #f4f4f4;
-    }
+        ul,
+        ol {
+            margin: 0 10%;
+        }
 
-    .paveikslelis {
-        display: block;
-        margin: 0 auto;
-    }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
 
-    footer {
-        text-align: center;
-        margin-top: 20px;
-    }
-</style>
+        .math-formula {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .math-integral {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .svg-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1,
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .animate-top {
+            color: #f4f4f4;
+        }
+
+        .paveikslelis {
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container {
+            position: relative;
+             z-index: 1000; /* or any higher value */
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+    </head>
 
     <body>
 
@@ -152,45 +189,127 @@
 
             <br>
             <br>
-            <div class="paveikslelis">
-                <img src="face.jpg" alt="Mano paveikslėlis" width="500"
-                    height="500">
+
+            <div class="form-container">
+                <h2>Įveskite savo informaciją:</h2>
+                <form id="userForm">
+                    <label for="firstName">Vardas:</label>
+                    <input type="text" id="firstName" required>
+
+                    <label for="lastName">Pavardė:</label>
+                    <input type="text" id="lastName" required>
+
+                    <label for="dob">Gimimo data:</label>
+                    <input type="date" id="dob" required>
+
+                    <button type="button" onclick="saveUserData()">Išsaugoti</button>
+                </form>
             </div>
 
-            <div class="math-formula">
+            <!-- <div class="paveikslelis">
+                <img src="face.jpg" alt="Mano paveikslėlis" width="500"
+                    height="500">
+            </div> -->
+
+            <!-- <div class="math-formula">
                 \(a^2 = b^2 + c^2\)
-            </div>
+            </div> -->
 
             <br>
 
-            <div class="math-integral">
+            <!-- <div class="math-integral">
                 \(Z(\upsilon)=\frac{1}{\sqrt{\pi}}\int_{-\infty}^{\infty}\frac{e^{-t^{2}}dt}{t-i\upsilon}=i\int_{0}^{\infty}e^{-\upsilon
                 t-t^{2}/4}dt\)
-            </div>
+            </div> -->
 
-            <div class="svg-container">
+            <!-- <div class="svg-container">
                 <svg width="300" height="160" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Draw a line representing the cup -->
-                    <line x1="0" y1="80" x2="90" y2="80" stroke="black" stroke-width="2" />
-                
-                    <!-- Draw an upside-down semicircle on top of the line, painted black -->
-                    <path d="M0 80 A45 45, 0, 0, 0, 90 80" fill="black" stroke="black" stroke-width="2" />
-                
-                    <!-- Draw an oval shape at the bottom of the cup to represent the plate -->
-                    <ellipse cx="45" cy="130" rx="45" ry="15" fill="none" stroke="black" stroke-width="2" />
-                
-                    <!-- Draw a handle for the cup on the right side (rounded) -->
-                    <path d="M90 100 C95 110, 100 120, 90 140" fill="none" stroke="black" stroke-width="2" />
+                    
+                    <line x1="0" y1="80" x2="90" y2="80" stroke="black"
+                        stroke-width="2" />
+
+                    
+                    <path d="M0 80 A45 45, 0, 0, 0, 90 80" fill="black"
+                        stroke="black" stroke-width="2" />
+
+                    
+                    <ellipse cx="45" cy="130" rx="45" ry="15" fill="none"
+                        stroke="black" stroke-width="2" />
+
+                    
+                    <path d="M90 100 C95 110, 100 120, 90 140" fill="none"
+                        stroke="black" stroke-width="2" />
                 </svg>
-                
-                
+            </div> -->
 
-            </div>
-
-            <footer>
+            <!-- <footer>
                 <p>&copy; 2023 Matas Arlauskas</p>
-            </footer>
+            </footer> -->
         </div>
+
+        <script>
+        
+        function saveUserData() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var dob = document.getElementById('dob').value;
+
+            // Validate first name (allow only letters)
+            if (!/^[a-zA-Z]+$/.test(firstName)) {
+                alert("Neteisingai įvestas vardas. Prašome įvesti tik raides.");
+                return;
+            }
+
+            // Validate last name (allow only letters)
+            if (!/^[a-zA-Z]+$/.test(lastName)) {
+                alert("Neteisingai įvesta pavardė. Prašome įvesti tik raides.");
+                return;
+            }
+
+            // Validate date of birth
+            var dobDate = new Date(dob);
+            if (isNaN(dobDate.getTime())) {
+                alert("Neteisingai įvesta gimimo data. Prašome pasirinkti galiojančią datą.");
+                return;
+            }
+
+            // If all validations pass, proceed to save and display data
+            var user = {
+                firstName: firstName,
+                lastName: lastName,
+                dob: dob
+            };
+
+            console.log("Išsaugota informacija:", user);
+
+            displayOnPage(user);
+
+            calculateDaysLived(user.dob);
+        }
+
+        function displayOnPage(user) {
+            var displayDiv = document.createElement('div');
+            displayDiv.innerHTML = "<h3>Vartotojo informacija:</h3>" +
+                "<p>Vartotojo vardas: " + user.firstName + "</p>" +
+                "<p>Vartotojo pavardė: " + user.lastName + "</p>" +
+                "<p>Gimimo data: " + user.dob + "</p>";
+
+            document.body.appendChild(displayDiv);
+        }
+
+        function calculateDaysLived(dob) {
+            var birthDate = new Date(dob);
+            var currentDate = new Date();
+            var timeDiff = currentDate - birthDate;
+            var daysLived = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            var daysWordEnding = (daysLived % 10 === 1 && daysLived % 100 !== 11) ? 'diena' : 'dienų';
+
+            console.log("Vartotojas nugyveno", daysLived, daysWordEnding);
+        }
+        
+    </script>
+
     </body>
 
 </html>
